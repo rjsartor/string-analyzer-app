@@ -22,12 +22,12 @@ const StringDisplay: React.FC<StringDisplayProps> = ({ input, streakDetails }) =
 
   return (
     <div className="mb-2" style={{ minHeight: '2.5rem' }}>
-      <div className="flex flex-wrap text-black text-lg font-semibold">
+      <div className="flex flex-wrap text-black text-lg font-semibold" style={{ whiteSpace: 'pre-wrap' }}>
         {characters.map((char, index) => {
           const color = highlightColor(index);
           return (
-            <span key={index} className={color}>
-              {char}
+            <span key={index} className={`${color} inline-block`}>
+              {char === ' ' ? '\u00A0' : char}
             </span>
           );
         })}
