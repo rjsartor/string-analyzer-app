@@ -1,34 +1,23 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) that integrates an Express server to demonstrate the set up of a React based frontend with an express server backend. The application analyzes user input to calculate the longest streak of even or odd of alphabetical characters (i.e a=even, b=odd, c=even, etc.). 
+
+Max streak(s) of characters are highlighted by their color (even or odd). Non alphabetical characters break the streak while spaces are ignored.
 
 ## Getting Started
 
-First, run the development server:
+The project is very lightweight and should only require running `npm i` for set-up.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+Once dependecies are installed run `npm run dev` to start the Next.js development server and `npm run server` to start the Express development server.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Once servers are running visit `http://localhost:3000/`
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+The project consists of two main components: the server directory and the src directory. 
 
-## Learn More
+`server` directory contains an `app.ts` express file and `routes` and `services` directories. `routes` contains the `analyze-string` route and `services` contains the `calculateStreak` function handling all of the string analysis logic.
 
-To learn more about Next.js, take a look at the following resources:
+`src` contains the Next app an is separated by an `analyze-string` route directory, a `components` directory, and a `hooks`. `analyze-string` is the proxy endpoint that sends a post request to the server, `components` contains the input, display, and legend used for the UI, and `hooks` contains `useAnalyzeString` which calls the proxy endpoint and retrieves/sets the string analyses. 
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Using the application
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Simply use the input field to start calculating the longest streak. Responses should be automatic and the the longest streaks are highlighted. Errors should be handled in a red display text under the input field.
