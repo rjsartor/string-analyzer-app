@@ -16,8 +16,8 @@ The project consists of two main components: the server directory and the src di
 
 `server` directory contains an `app.ts` express file and `routes` and `services` directories. `routes` contains the `analyze-string` route and `services` contains the `calculateStreak` function handling all of the string analysis logic.
 
-`src` contains the Next app an is separated by an `analyze-string` route directory, a `components` directory, and a `hooks`. `analyze-string` is the proxy endpoint that sends a post request to the server, `components` contains the input, display, and legend used for the UI, and `hooks` contains `useAnalyzeString` which calls the proxy endpoint and retrieves/sets the string analyses. 
+`src` is the Next app and includes an `analyze-string` route directory, a `components` directory, and a `hooks` directory. `analyze-string` is the proxy endpoint that sends a post request to the server, `components` contains the input, display, and legend used for the UI, and `hooks` contains `useAnalyzeString` which calls the proxy endpoint and retrieves/sets the string analyses. 
 
 ## Using the application
 
-Simply use the input field to start calculating the longest streak. Responses should be automatic and the the longest streaks are highlighted. Errors should be handled in a red display text under the input field.
+Simply enter text into the input field to start calculating the longest streak. Responses should be automatic and the the longest streaks will be highlighted in their approriate color. Errors should be handled in a red display text under the input field.
