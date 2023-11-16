@@ -15,7 +15,7 @@ Once servers are running visit `http://localhost:3000/`
 The project consists of two main components: the server directory and the src directory. 
 
 `server` directory contains an `app.ts` express file and `routes` and `services` directories. `routes` contains the `analyze-string` route and `services` contains the `calculateStreak` function handling all of the string analysis logic.
-
+```
 server/
 │
 ├── app.ts
@@ -25,9 +25,10 @@ server/
 │
 └── services/
     └── calculateStreak.ts
+```
 
 `src` is the Next.js app and includes an `analyze-string` route directory, a `components` directory, and a `hooks` directory. `analyze-string` is the proxy endpoint that sends a POST request to the server, `components` contains the input, display, and legend used for the UI, and `hooks` contains `useAnalyzeString` which calls the proxy endpoint and retrieves/sets the string analysis. 
-
+```
 src/
 │
 ├── analyze-string/
@@ -40,6 +41,7 @@ src/
 │
 └── hooks/
     └── useAnalyzeString.ts
+```
 
 ## Using the application
 
