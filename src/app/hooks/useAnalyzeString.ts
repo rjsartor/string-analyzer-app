@@ -24,7 +24,7 @@ const useAnalyzeString = (input: string): UseAnalyzeStringReturn => {
   };
 
   useEffect(() => { 
-    if (input.length) analyzeString(input) 
+    if (input.length) analyzeString(input); 
   }, [input]);
 
   return { maxStreak, streakDetails, error };
