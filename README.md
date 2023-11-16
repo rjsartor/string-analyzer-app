@@ -16,8 +16,37 @@ The project consists of two main components: the server directory and the src di
 
 `server` directory contains an `app.ts` express file and `routes` and `services` directories. `routes` contains the `analyze-string` route and `services` contains the `calculateStreak` function handling all of the string analysis logic.
 
-`src` is the Next app and includes an `analyze-string` route directory, a `components` directory, and a `hooks` directory. `analyze-string` is the proxy endpoint that sends a post request to the server, `components` contains the input, display, and legend used for the UI, and `hooks` contains `useAnalyzeString` which calls the proxy endpoint and retrieves/sets the string analyses. 
+server/
+│
+├── app.ts
+│
+├── routes/
+│   └── analyze-string.ts
+│
+└── services/
+    └── calculateStreak.ts
+
+`src` is the Next.js app and includes an `analyze-string` route directory, a `components` directory, and a `hooks` directory. `analyze-string` is the proxy endpoint that sends a POST request to the server, `components` contains the input, display, and legend used for the UI, and `hooks` contains `useAnalyzeString` which calls the proxy endpoint and retrieves/sets the string analysis. 
+
+src/
+│
+├── analyze-string/
+│   └── route.ts
+│
+├── components/
+│   ├── input.tsx
+│   ├── display.tsx
+│   └── legend.tsx
+│
+└── hooks/
+    └── useAnalyzeString.ts
 
 ## Using the application
 
 Simply enter text into the input field to start calculating the longest streak. Responses should be automatic and the the longest streaks will be highlighted in their approriate color. Errors should be handled in a red display text under the input field.
+
+<img width="728" alt="Screen Shot 2023-11-16 at 10 39 47" src="https://github.com/rjsartor/string-analyzer-app/assets/51131460/ed986de2-fba1-4a60-a7c3-d12b18984106">
+
+<img width="722" alt="Screen Shot 2023-11-16 at 10 41 02" src="https://github.com/rjsartor/string-analyzer-app/assets/51131460/cf572b99-5a6e-4118-bd45-4f15fcda8b30">
+
+
